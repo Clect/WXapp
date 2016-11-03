@@ -1,0 +1,44 @@
+<!--calendar.wxml-->
+<view class='topBar'>
+    <image src="../../i/left_white.png" class="leftIcon"></image>
+    <view class='monthAndYear'>APRIL 2015</view>
+    <image src="../../i/right_white.png" class="rightIcon"></image>
+</view>
+<view class='weekDay'>
+    <view class='week'>S</view>
+    <view class='week'>M</view>
+    <view class='week'>T</view>
+    <view class='week'>W</view>
+    <view class='week'>T</view>
+    <view class='week'>F</view>
+    <view class='week'>S</view>
+</view>
+<view class='monthDay'>
+    <view class='tr'>
+        <view class='day'></view>
+        <view class='day'></view>
+        <view class='day'></view>
+        <view class='day'></view>
+        <view class='day'>1</view>
+        <view class='day'>2</view>
+        <view class='day'>3</view>
+    </view>
+    <view class='tr'>
+        <view class='day'>4</view>
+        <view class='day'>5</view>
+        <view class='day'>6</view>
+        <view class='day'>7</view>
+        <view class='day'>8</view>
+        <view class='day'>9</view>
+        <view class='day'>10</view>
+    </view>
+    <view class='tr'>
+        <view class='day'>11</view>
+        <view class='day'>12</view>
+        <view class='day'>13</view>
+        <view class='day'>14</view>
+        <view class='day'>15</view>
+        <view class='day'>16</view>
+        <view class='day'>17</view>
+    </view>
+</view>

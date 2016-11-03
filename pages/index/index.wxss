@@ -19,3 +19,10 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.calender{
+  margin-top: 20px;
+  border:1px solid #adcb47;
+  padding: 5px;
+  border-radius: 3px;
+}

@@ -1,0 +1,57 @@
+.topBar{
+    position: relative;
+    background-color: #8D91FF;
+    width: 100%;
+    height: 200rpx;
+}
+.topBar image.leftIcon{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+.topBar .monthAndYear{
+    position: absolute;
+    top:36px;
+    left: 260rpx;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 40rpx;
+    color: white;
+}
+.topBar image.rightIcon{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+}
+.weekDay{
+    display: flex;
+}
+.weekDay .week{
+    display: flex;
+    flex-grow: 1;
+    width: 100rpx;
+    padding-top: 50rpx;
+    padding-bottom: 50rpx;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.monthDay{
+
+}
+.monthDay .tr{
+    display: flex;
+}
+.monthDay .tr .day{
+    display: flex;
+    flex-grow: 1;
+    width: 100rpx;
+    padding-top: 10px;
+    padding-bottom: 50rpx;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #999;
+}

@@ -3,14 +3,20 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    motto: 'Hello World！',
+    userInfo: {},
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../calendar/calendar'
     })
+  },
+  toCalendar:function(){
+    wx.navigateTo({
+      url: '../calendar/calendar',
+    })
+    console.log('touched');
   },
   onLoad: function () {
     console.log('onLoad')
