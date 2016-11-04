@@ -70,7 +70,7 @@ Page({
         }
         else{
             this.setData({
-                monthNum:n + 1,
+                monthNum:n - 1,
             });
         }
         this.calcMonthDayArray();
@@ -95,6 +95,7 @@ Page({
                 trArray.push({
                     num:i - nSpace,
                     isShowDayInfo:false,
+                    nongli:'初一',
                 });
             }
             else{

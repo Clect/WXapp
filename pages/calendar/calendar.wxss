@@ -27,41 +27,57 @@
     top: 40px;
     right: 20px;
 }
+.monthBox{
+    widows: 100%;
+    border-bottom: 1px solid #8D91FF;
+}
 .weekDay{
     display: flex;
+    flex-grow: 1;
 }
 .weekDay .week{
     display: flex;
-    flex-grow: 1;
-    width: 100rpx;
+    width: 200rpx;
     margin-top: 50rpx;
-    margin-bottom: 50rpx;
+    margin-bottom: 30rpx;
     justify-content: center;
     font-family:Arial, Helvetica, sans-serif;
 }
 .monthDay{
-
+    width: 96%;
+    padding: 0 2%;
 }
 .monthDay .tr{
-    display: flex;
-}
-.monthDay .tr .day{
+    width: 100%;
     display: flex;
     flex-grow: 1;
-    width: 50rpx;
-    line-height: 107rpx;
+}
+.monthDay .tr .day{
+    display: block;
+    width: 200rpx;
+    height: 80rpx;
+    padding-top: 10rpx;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10rpx;
-    justify-content: center;
-    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5rpx;
+    text-align: center;
     color: #999;
+    border: 1rpx solid white;
 }
-.monthDay .tr .hideDayInfo{
-
+.monthDay .tr .day.hideDayInfo{
+    border: 1rpx solid white;
 }
-.monthDay .tr .showDayInfo{
+.monthDay .tr .day.showDayInfo{
     border:1rpx solid #8D91FF;
-    line-height: 103rpx;
-    width: 46rpx;
+}
+.monthDay .tr .day .gongli{
+    display: block;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.monthDay .tr .day .nongli{
+    display: block;
+    font-family: "微软雅黑";
+    font-weight: 200;
+    font-size: 20rpx;
+    text-align: center;
 }
