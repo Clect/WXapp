@@ -34,8 +34,8 @@
     display: flex;
     flex-grow: 1;
     width: 100rpx;
-    padding-top: 50rpx;
-    padding-bottom: 50rpx;
+    margin-top: 50rpx;
+    margin-bottom: 50rpx;
     justify-content: center;
     font-family:Arial, Helvetica, sans-serif;
 }
@@ -48,10 +48,20 @@
 .monthDay .tr .day{
     display: flex;
     flex-grow: 1;
-    width: 100rpx;
-    padding-top: 10px;
-    padding-bottom: 50rpx;
+    width: 50rpx;
+    line-height: 107rpx;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10rpx;
     justify-content: center;
     font-family:Arial, Helvetica, sans-serif;
     color: #999;
+}
+.monthDay .tr .hideDayInfo{
+
+}
+.monthDay .tr .showDayInfo{
+    border:1rpx solid #8D91FF;
+    line-height: 103rpx;
+    width: 46rpx;
 }

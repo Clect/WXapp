@@ -1,22 +1,22 @@
 <!--calendar.wxml-->
-<view class='topBar'>
+<view class="topBar">
     <image src="../../i/left_white.png" class="leftIcon" bindtap="lastMonth_Fn"></image>
-    <view class='monthAndYear'>{{MONTH_EN[monthNum - 1]}} {{yearNum}}</view>
+    <view class="monthAndYear">{{MONTH_EN[monthNum - 1]}} {{yearNum}}</view>
     <image src="../../i/right_white.png" class="rightIcon" bindtap="nextMonth_Fn"></image>
 </view>
-<view class='weekDay'>
-    <view class='week'>S</view>
-    <view class='week'>M</view>
-    <view class='week'>T</view>
-    <view class='week'>W</view>
-    <view class='week'>T</view>
-    <view class='week'>F</view>
-    <view class='week'>S</view>
+<view class="weekDay">
+    <view class="week">S</view>
+    <view class="week">M</view>
+    <view class="week">T</view>
+    <view class="week">W</view>
+    <view class="week">T</view>
+    <view class="week">F</view>
+    <view class="week">S</view>
 </view>
-<view class='monthDay'>
-    <view class='tr' wx:for="{{MonthDayArray}}" wx:key="month">
-        <view class='day' wx:for="{{item}}" bindtap="dateClick" wx:key="day">
-            {{item}}
+<view class="monthDay">
+    <view class="tr" wx:for="{{MonthDayArray}}" wx:key="month">
+        <view id="{{item.num}}" class="day {{item.isShowDayInfo ? 'showDayInfo':'hideDayInfo'}}" wx:for="{{item}}" bindtap="dateClick" wx:key="day">
+            <text class="gongli">{{item.num}}</text>
         </view>
     </view>
 </view>

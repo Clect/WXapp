@@ -12,7 +12,32 @@ Page({
     },
 
     dateClick:function(e){
-        console.log(e);
+        var eId = e.currentTarget.id;
+        var MonArray = this.data.MonthDayArray;
+
+        for(var i = 0;i < MonArray.length;i++){
+            for(var j = 0;j < MonArray[i].length;j++){
+                if(typeof(MonArray[i][j]) == 'string'){
+                    continue;
+                }
+                if(MonArray[i][j].num == eId){
+                    MonArray[i][j].isShowDayInfo = !MonArray[i][j].isShowDayInfo;
+                }
+            }
+        }
+
+        for(var i = 0;i < MonArray.length;i++){
+            for(var j = 0;j < MonArray[i].length;j++){
+                if(typeof(MonArray[i][j]) == 'string' || MonArray[i][j].num == eId){
+                    continue;
+                }
+                MonArray[i][j].isShowDayInfo = false;
+            }
+        }
+
+        this.setData({
+            MonthDayArray:MonArray,
+        })
     },
 
     nextMonth_Fn:function(){
@@ -67,7 +92,10 @@ Page({
                 trArray.push('');
             }
             else if(i <= totalDate + nSpace){
-                trArray.push(i - nSpace);
+                trArray.push({
+                    num:i - nSpace,
+                    isShowDayInfo:false,
+                });
             }
             else{
                 var l = trArray.length;
