@@ -17,6 +17,11 @@
     padding-top: 15rpx;
     font-size: 28rpx;
 }
+.topBar .nongliDetail{
+    position: absolute;
+    right: 10rpx;
+    bottom: 10rpx;
+}
 .monthBox{
     widows: 100%;
 

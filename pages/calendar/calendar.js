@@ -14,6 +14,7 @@ Page({
         toMonth:t.getMonth() + 1,
         toYear:t.getFullYear(),
         fromToday:'今天',
+        nongliDetail:CN_Date(t.getFullYear(), t.getMonth() + 1, t.getDate()),
     },
 
     dateClick:function(e){
@@ -46,6 +47,7 @@ Page({
             toMonth:data.monthNum,
             toDate:eId,
             fromToday:d.getFromTodayDays(eId, data.monthNum - 1, data.yearNum),
+            nongliDetail:CN_Date(data.yearNum, data.monthNum, eId),
         })
     },
 
@@ -118,7 +120,7 @@ Page({
                     num:i - nSpace,
                     isShowDayInfo:false,
                     nongli:nl.slice(nl.length - 2),
-                    nongliInfoo:CN_Date(data.yearNum, data.monthNum, i-nSpace),
+                    nongliInfo:CN_Date(data.yearNum, data.monthNum, i-nSpace),
                     isToday:(data.monthNum == t.getMonth() + 1 && i - nSpace == t.getDate() && data.yearNum == t.getFullYear()) ? true : false,
                 });
             }
@@ -152,6 +154,7 @@ Page({
             toMonth:notToday ? this.data.monthNum : t.getMonth() + 1,
             toDate:notToday ? 1 : t.getDate(),
             fromToday:notToday ? d.getFromTodayDays(1, data.monthNum - 1, data.yearNum) : '今天',
+            nongliDetail:notToday ? CN_Date(data.yearNum, data.monthNum, 1) : CN_Date(t.getFullYear(), t.getMonth() + 1, t.getDate()),
         })
     }
     

@@ -2,8 +2,11 @@
 <view class="topBar">
     <view class="whichDate">{{toMonth}}月{{toDate}}日</view>
     <view class="whichYear">
-        <text>{{toYear}}\n</text>
+        <text>{{toYear}}年\n</text>
         <text>{{fromToday}}</text>
+    </view>
+    <view class="nongliDetail">
+        {{nongliDetail}}
     </view>
 </view>
 <view class="monthBox" catchtouchend="monthTouch">
