@@ -1,13 +1,30 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/calendar/calendar",
     "pages/logs/logs",
-    "pages/calendar/calendar"
+    "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#8D91FF",
     "navigationBarTitleText": "",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#8D91FF",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/calendar/calendar",
+      "iconPath": "i/calendar.png",
+      "selectedIconPath": "i/calendar_active.png",
+      "text": "日历"
+    }, {
+      "pagePath": "pages/index/index",
+      "iconPath": "i/team.png",
+      "selectedIconPath": "i/team_active.png",
+      "text": "团队"
+    }]
   }
 }

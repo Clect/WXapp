@@ -29,7 +29,7 @@
 }
 .monthBox{
     widows: 100%;
-    border-bottom: 1px solid #8D91FF;
+
 }
 .weekDay{
     display: flex;
@@ -69,6 +69,10 @@
 }
 .monthDay .tr .day.showDayInfo{
     border:1rpx solid #8D91FF;
+}
+.monthDay .tr .today{
+    background-color: #8D91FF;
+    color:white;
 }
 .monthDay .tr .day .gongli{
     display: block;

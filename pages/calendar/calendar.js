@@ -20,7 +20,7 @@ Page({
                 if(typeof(MonArray[i][j]) == 'string'){
                     continue;
                 }
-                if(MonArray[i][j].num == eId){
+                if(MonArray[i][j].num == eId){  
                     MonArray[i][j].isShowDayInfo = !MonArray[i][j].isShowDayInfo;
                 }
             }
@@ -38,6 +38,18 @@ Page({
         this.setData({
             MonthDayArray:MonArray,
         })
+    },
+
+    monthTouch:function(e){
+        var beginX = e.target.offsetLeft;
+        var endX = e.changedTouches[0].clientX;
+        console.log(beginX - endX);
+        if(beginX - endX > 150){
+            this.nextMonth_Fn();
+        }
+        else if(beginX - endX < -150){
+            this.lastMonth_Fn();
+        }
     },
 
     nextMonth_Fn:function(){
@@ -77,7 +89,7 @@ Page({
     },
 
     onShow:function(){
-        console.log('onLoad');
+        console.log('onShow');
         this.calcMonthDayArray();
     },
 
@@ -96,6 +108,7 @@ Page({
                     num:i - nSpace,
                     isShowDayInfo:false,
                     nongli:'初一',
+                    isToday:(data.monthNum == t.getMonth() + 1 && i - nSpace == t.getDate() && data.yearNum == t.getFullYear()) ? true : false,
                 });
             }
             else{

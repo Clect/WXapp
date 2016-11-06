@@ -4,7 +4,7 @@
     <view class="monthAndYear">{{MONTH_EN[monthNum - 1]}} {{yearNum}}</view>
     <image src="../../i/right_white.png" class="rightIcon" bindtap="nextMonth_Fn"></image>
 </view>
-<view class="monthBox">
+<view class="monthBox" catchtouchend="monthTouch">
     <view class="weekDay">
         <view class="week">S</view>
         <view class="week">M</view>
@@ -16,7 +16,7 @@
     </view>
     <view class="monthDay">
         <view class="tr" wx:for="{{MonthDayArray}}" wx:key="month">
-            <view id="{{item.num}}" class="day {{item.isShowDayInfo ? 'showDayInfo':'hideDayInfo'}}" wx:for="{{item}}" bindtap="dateClick" wx:key="day">
+            <view id="{{item.num}}" class="day {{item.isShowDayInfo ? 'showDayInfo':'hideDayInfo'}} {{item.isToday ? 'today' : ''}}" wx:for="{{item}}" bindtap="dateClick" wx:key="day">
                 <text class="gongli">{{item.num}}</text>
                 <text class="nongli">{{item.nongli}}</text>
             </view>
