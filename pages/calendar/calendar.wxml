@@ -1,8 +1,10 @@
 <!--calendar.wxml-->
 <view class="topBar">
-    <image src="../../i/left_white.png" class="leftIcon" bindtap="lastMonth_Fn"></image>
-    <view class="monthAndYear">{{MONTH_EN[monthNum - 1]}} {{yearNum}}</view>
-    <image src="../../i/right_white.png" class="rightIcon" bindtap="nextMonth_Fn"></image>
+    <view class="whichDate">{{toMonth}}月{{toDate}}日</view>
+    <view class="whichYear">
+        <text>{{toYear}}\n</text>
+        <text>{{fromToday}}</text>
+    </view>
 </view>
 <view class="monthBox" catchtouchend="monthTouch">
     <view class="weekDay">

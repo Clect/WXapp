@@ -1,5 +1,6 @@
 var util = require('../../utils/util.js')
 var d = require('date.js')
+var CN_Date = require('getCNDate.js');
 var app = getApp()
 var t = new Date();
 
@@ -9,12 +10,16 @@ Page({
         monthNum:t.getMonth() + 1,
         yearNum:t.getFullYear(),
         MonthDayArray:[],
+        toDate:t.getDate(),
+        toMonth:t.getMonth() + 1,
+        toYear:t.getFullYear(),
+        fromToday:'今天',
     },
 
     dateClick:function(e){
         var eId = e.currentTarget.id;
         var MonArray = this.data.MonthDayArray;
-
+        var data = this.data;
         for(var i = 0;i < MonArray.length;i++){
             for(var j = 0;j < MonArray[i].length;j++){
                 if(typeof(MonArray[i][j]) == 'string'){
@@ -37,6 +42,10 @@ Page({
 
         this.setData({
             MonthDayArray:MonArray,
+            toYear:data.yearNum,
+            toMonth:data.monthNum,
+            toDate:eId,
+            fromToday:d.getFromTodayDays(eId, data.monthNum - 1, data.yearNum),
         })
     },
 
@@ -44,10 +53,10 @@ Page({
         var beginX = e.target.offsetLeft;
         var endX = e.changedTouches[0].clientX;
         console.log(beginX - endX);
-        if(beginX - endX > 150){
+        if(beginX - endX > 100){
             this.nextMonth_Fn();
         }
-        else if(beginX - endX < -150){
+        else if(beginX - endX < -100){
             this.lastMonth_Fn();
         }
     },
@@ -104,10 +113,12 @@ Page({
                 trArray.push('');
             }
             else if(i <= totalDate + nSpace){
+                var nl = CN_Date(data.yearNum, data.monthNum, i-nSpace);
                 trArray.push({
                     num:i - nSpace,
                     isShowDayInfo:false,
-                    nongli:'初一',
+                    nongli:nl.slice(nl.length - 2),
+                    nongliInfoo:CN_Date(data.yearNum, data.monthNum, i-nSpace),
                     isToday:(data.monthNum == t.getMonth() + 1 && i - nSpace == t.getDate() && data.yearNum == t.getFullYear()) ? true : false,
                 });
             }
@@ -124,8 +135,23 @@ Page({
                 trArray = [];
             }
         }
+
+        //如果不是当年当月，自动选中1号
+        var notToday = (data.monthNum != t.getMonth() + 1 || data.yearNum != t.getFullYear());
+        if(notToday){
+            for(var i = 0;i < dateArray[0].length;i++){
+                if(dateArray[0][i].num == 1){
+                    dateArray[0][i].isShowDayInfo = true;
+                }
+            }
+        }
+
         this.setData({
             MonthDayArray:dateArray,
+            toYear:notToday ? this.data.yearNum : t.getFullYear(),
+            toMonth:notToday ? this.data.monthNum : t.getMonth() + 1,
+            toDate:notToday ? 1 : t.getDate(),
+            fromToday:notToday ? d.getFromTodayDays(1, data.monthNum - 1, data.yearNum) : '今天',
         })
     }
     

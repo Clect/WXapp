@@ -2,30 +2,20 @@
     position: relative;
     background-color: #8D91FF;
     width: 100%;
-    height: 200rpx;
-}
-.topBar image.leftIcon{
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    top: 40px;
-    left: 20px;
-}
-.topBar .monthAndYear{
-    position: absolute;
-    top:36px;
-    left: 260rpx;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 200;
-    font-size: 40rpx;
     color: white;
+    font-family: '微软雅黑';
+    font-weight: 200;
 }
-.topBar image.rightIcon{
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    top: 40px;
-    right: 20px;
+.topBar .whichDate{
+    display: inline-block;
+    padding: 0px 0rpx 10rpx 20rpx;
+    font-size: 70rpx;
+}
+.topBar .whichYear{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 15rpx;
+    font-size: 28rpx;
 }
 .monthBox{
     widows: 100%;
