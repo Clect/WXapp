@@ -23,8 +23,8 @@
     bottom: 10rpx;
 }
 .monthBox{
-    widows: 100%;
-
+    width: 96%;
+    padding: 0 2%;
 }
 .weekDay{
     display: flex;
@@ -33,14 +33,14 @@
 .weekDay .week{
     display: flex;
     width: 200rpx;
-    margin-top: 50rpx;
-    margin-bottom: 30rpx;
+    margin-top: 30rpx;
+    margin-bottom: 10rpx;
     justify-content: center;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'微软雅黑';
+    font-weight: 200;
 }
 .monthDay{
-    width: 96%;
-    padding: 0 2%;
+    width: 100%;
 }
 .monthDay .tr{
     width: 100%;

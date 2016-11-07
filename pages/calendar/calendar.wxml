@@ -11,13 +11,13 @@
 </view>
 <view class="monthBox" catchtouchend="monthTouch">
     <view class="weekDay">
-        <view class="week">S</view>
-        <view class="week">M</view>
-        <view class="week">T</view>
-        <view class="week">W</view>
-        <view class="week">T</view>
-        <view class="week">F</view>
-        <view class="week">S</view>
+        <view class="week">日</view>
+        <view class="week">一</view>
+        <view class="week">二</view>
+        <view class="week">三</view>
+        <view class="week">四</view>
+        <view class="week">五</view>
+        <view class="week">六</view>
     </view>
     <view class="monthDay">
         <view class="tr" wx:for="{{MonthDayArray}}" wx:key="month">

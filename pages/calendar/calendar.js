@@ -6,7 +6,6 @@ var t = new Date();
 
 Page({
     data:{
-        MONTH_EN:['JAN ','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'],
         monthNum:t.getMonth() + 1,
         yearNum:t.getFullYear(),
         MonthDayArray:[],
@@ -15,6 +14,11 @@ Page({
         toYear:t.getFullYear(),
         fromToday:'今天',
         nongliDetail:CN_Date(t.getFullYear(), t.getMonth() + 1, t.getDate()),
+    },
+    
+    onShow:function(){
+        console.log('onShow');
+        this.calcMonthDayArray();
     },
 
     dateClick:function(e){
@@ -54,11 +58,10 @@ Page({
     monthTouch:function(e){
         var beginX = e.target.offsetLeft;
         var endX = e.changedTouches[0].clientX;
-        console.log(beginX - endX);
-        if(beginX - endX > 100){
+        if(beginX - endX > 125){
             this.nextMonth_Fn();
         }
-        else if(beginX - endX < -100){
+        else if(beginX - endX < -125){
             this.lastMonth_Fn();
         }
     },
@@ -66,7 +69,6 @@ Page({
     nextMonth_Fn:function(){
         var n = this.data.monthNum;
         var y =this.data.yearNum;
-        console.log(n);
         if(n == 12){
             this.setData({
                 monthNum:1,
@@ -84,7 +86,6 @@ Page({
     lastMonth_Fn:function(){
         var n = this.data.monthNum;
         var y =this.data.yearNum;
-        console.log(n);
         if(n == 1){
             this.setData({
                 monthNum:12,
@@ -99,44 +100,9 @@ Page({
         this.calcMonthDayArray();
     },
 
-    onShow:function(){
-        console.log('onShow');
-        this.calcMonthDayArray();
-    },
-
     calcMonthDayArray:function(){
         var data = this.data;
-        var nSpace = d.getMonthFirstDay(data.monthNum - 1, data.yearNum);
-        var totalDate = d.getMonthTotalDate(data.monthNum, data.yearNum);
-        var dateArray = [];
-        var trArray = [];
-        for(var i = 1;;i++){
-            if(i <= nSpace){
-                trArray.push('');
-            }
-            else if(i <= totalDate + nSpace){
-                var nl = CN_Date(data.yearNum, data.monthNum, i-nSpace);
-                trArray.push({
-                    num:i - nSpace,
-                    isShowDayInfo:false,
-                    nongli:nl.slice(nl.length - 2),
-                    nongliInfo:CN_Date(data.yearNum, data.monthNum, i-nSpace),
-                    isToday:(data.monthNum == t.getMonth() + 1 && i - nSpace == t.getDate() && data.yearNum == t.getFullYear()) ? true : false,
-                });
-            }
-            else{
-                var l = trArray.length;
-                for(var j = 0;j + l < 7;j++){
-                    trArray.push('');
-                }
-                dateArray.push(trArray);
-                break;
-            }
-            if(trArray.length == 7){
-                dateArray.push(trArray);
-                trArray = [];
-            }
-        }
+        var dateArray = d.paintCalendarArray(data.monthNum, data.yearNum);
 
         //如果不是当年当月，自动选中1号
         var notToday = (data.monthNum != t.getMonth() + 1 || data.yearNum != t.getFullYear());

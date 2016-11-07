@@ -1,11 +1,15 @@
 <!--index.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view class="topBar">
+  我的团队
+</view>
+<view class="teamBox">
+  <view wx:for="{{teamArray}}" wx:key="team">
+    <view class="teamInfo">
+      <view class="teamName">{{item.name}}</view>
+      <view class="teamMember">
+        <view class="members">{{item.members}}</view>
+        <view class="memberNum">{{item.memberNum}}个成员</view>
+      </view>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <view class="calender" bindtap="toCalendar">万年历</view>
 </view>

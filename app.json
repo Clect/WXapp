@@ -13,7 +13,7 @@
   "tabBar": {
     "color": "#dddddd",
     "selectedColor": "#8D91FF",
-    "borderStyle": "black",
+    "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [{
       "pagePath": "pages/calendar/calendar",
