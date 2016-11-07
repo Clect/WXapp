@@ -8,7 +8,8 @@
       <view class="teamName">{{item.name}}</view>
       <view class="teamMember">
         <view class="members">{{item.members}}</view>
-        <view class="memberNum">{{item.memberNum}}个成员</view>
+        <view class="memberNum">{{item.members.length}}个成员</view>
+        <image class="right_arrow" src="../../i/right.png"></image>
       </view>
     </view>
   </view>

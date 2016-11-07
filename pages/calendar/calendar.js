@@ -25,6 +25,9 @@ Page({
         var eId = e.currentTarget.id;
         var MonArray = this.data.MonthDayArray;
         var data = this.data;
+        if(eId == "")return;
+        //点击效果 ，且只能选中一个日期
+        //FIX 这个遍历算法可以改进
         for(var i = 0;i < MonArray.length;i++){
             for(var j = 0;j < MonArray[i].length;j++){
                 if(typeof(MonArray[i][j]) == 'string'){

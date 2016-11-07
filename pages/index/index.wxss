@@ -7,6 +7,7 @@
   padding: 0rpx 0rpx 10rpx 20rpx;
 }
 .teamInfo{
+  position: relative;
   line-height: 120rpx;
   padding-left: 50rpx;
   border-bottom: 1px solid #eee;
@@ -33,4 +34,11 @@
 .teamInfo .teamMember .memberNum{
   line-height: 30rpx;
   font-size: 20rpx;
+}
+.teamInfo .teamMember .right_arrow{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 50rpx;
 }
