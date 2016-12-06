@@ -82,7 +82,7 @@ function GetcDateString() {
     return tmp;
 }
 
-function GetLunarDay(solarYear, solarMonth, solarDay) {
+export default function GetLunarDay(solarYear, solarMonth, solarDay) {
     //solarYear = solarYear<1900?(1900+solarYear):solarYear;
     if (solarYear < 1921 || solarYear > 2020) {
         return "";
@@ -92,5 +92,3 @@ function GetLunarDay(solarYear, solarMonth, solarDay) {
         return GetcDateString();
     }
 }
-
-module.exports = GetLunarDay;

@@ -1,4 +1,4 @@
-var CN_Date = require('getCNDate.js');
+import CN_Date from './getCNDate';
 
 function getMonthFirstDay(m, y){
     var t = new Date();
@@ -81,7 +81,7 @@ function paintCalendarArray(m, y){
     return ret;
 }
 
-module.exports = {
+export default {
   'getMonthFirstDay': getMonthFirstDay,
   'getMonthTotalDate':getMonthTotalDate,
   'getFromTodayDays':getFromTodayDays,
