@@ -1,0 +1,45 @@
+<style type="less">
+    .teamMember{
+        font-family: '微软雅黑';
+        padding:0 50rpx;
+        color:#353535;
+        line-height:100rpx;
+    }
+    .manageTeamMembers{
+        background-color:#00f0ff;
+        color:white;
+        font-family: '微软雅黑';
+        width:600rpx;
+    }
+    .planInfo{
+        font-family: '微软雅黑';
+        text-align: center;
+        font-weight:200;
+    }
+</style>
+<template>
+    <text class="teamMember">近期安排</text>
+    <view wx:for="{{plan}}" wx:key="plan">
+        <view class="planInfo">
+            {{item.from}} 到 {{item.to}}
+        </view>
+    </view>
+    <button class="manageTeamMembers">管理我的团队成员</button>
+</template>
+<script>
+    import wepy from 'wepy';
+    export default class TeamDate extends wepy.page {
+        async onLoad(){
+            var url = 'http://www.clect.cn/wx_app_api/test';
+            var c = await wx.request(url);
+            this.plan.push(c.data.data.plan);
+            console.log(this)
+        }
+        data = {
+            plan:[],
+        }
+        methods = {
+
+        }
+    }
+</script>

@@ -1,0 +1,112 @@
+<style type="less">
+    .topBar{
+        font-family: '微软雅黑';
+        font-weight: 200;
+        font-size: 50rpx;
+        color: white;
+        background-color: #8D91FF;
+        padding: 0rpx 0rpx 10rpx 20rpx;
+    }
+    .teamInfo{
+        position: relative;
+        line-height: 120rpx;
+        padding-left: 50rpx;
+        border-bottom: 1px solid #eee;
+
+        .teamName{
+            font-family: '微软雅黑';
+            font-weight: 200;
+            font-size: 40rpx;
+            display: inline-block;
+        }
+
+        .teamMember{
+            display: inline-block;
+            vertical-align: top;
+            line-height: 30rpx;
+            font-size: 20rpx;
+            font-family: '微软雅黑';
+            color: #999;
+            padding-top: 30rpx;
+            padding-left: 30rpx;
+
+            .memberNum{
+                line-height: 30rpx;
+                font-size: 20rpx;
+            }
+            .right_arrow{
+                width: 30rpx;
+                height: 30rpx;
+                position: absolute;
+                right: 20rpx;
+                top: 50rpx;
+            }
+        }
+    }
+    .addNewTeam{
+        position: relative;
+        line-height: 120rpx;
+        padding-left: 50rpx;
+        border-bottom: 1px solid #eee;
+        text-align:center;
+        font-family: '微软雅黑';
+        font-weight:200;
+    }
+</style>
+
+<template>
+    <view class="topBar">
+        我的团队
+    </view>
+    <view class="teamBox">
+        <view wx:for="{{teamArray}}" wx:key="team">
+            <view class="teamInfo" bindtap="teamClick">
+                <view class="teamName">{{item.name}}</view>
+                <view class="teamMember">
+                    <view class="members">{{item.members}}</view>
+                    <view class="memberNum">{{item.members.length}}个成员</view>
+                    <image class="right_arrow" src="../i/right.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="addNewTeam">
+            创建新的团队
+        </view>
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+    export default class Team extends wepy.page {
+        data = {
+            teamArray:[
+                {
+                    name:"家庭",
+                    members:['我','父亲','母亲'],
+                },
+                {
+                    name:"朋友",
+                    members:['我','郭菁华','徐航'],
+                },
+                {
+                    name:"公司",
+                    members:['我','大圣','龙哥','洋洋'],
+                }
+            ],
+        }
+
+        methods = {
+            teamClick(e){
+                wx.navigateTo({ url: './team_date' })
+            }
+        }
+
+        onLoad(){
+
+        }
+
+        onShow(){
+            
+        }
+    }
+</script>

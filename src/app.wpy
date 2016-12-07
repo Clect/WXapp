@@ -11,7 +11,9 @@ export default class extends wepy.app {
 
     config = {
         "pages":[
-            "pages/index"
+            "pages/index",
+            "pages/team",
+            "pages/team_date"
         ],
         "window":{
             "backgroundTextStyle":"light",
@@ -30,30 +32,12 @@ export default class extends wepy.app {
                     "selectedIconPath": "i/calendar_active.png",
                     "text": "日历"
             }, {
-                "pagePath": "pages/index",
+                "pagePath": "pages/team",
                 "iconPath": "i/team.png",
                 "selectedIconPath": "i/team_active.png",
                 "text": "团队"
             }]
         }
     };
-
-    globalData = {
-        userInfo: null
-    };
-
-    onLaunch() {
-        console.log(this);
-    }
-
-    async getUserInfo() {
-        if (this.globalData.userInfo) {
-            return this.globalData.userInfo;
-        }
-        let x = await wx.login();
-        let res = await wx.getUserInfo();
-        this.globalData.userInfo = res.userInfo;
-        return res.userInfo;
-    }
 }
 </script>
